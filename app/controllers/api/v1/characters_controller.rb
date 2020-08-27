@@ -1,5 +1,5 @@
 class Api::V1::CharactersController < ApplicationController
-  before_action :find_character, only: :show
+  before_action :find_character, only: [:show, :update, :destroy]
 
   def index
     @characters = Character.all
@@ -35,7 +35,7 @@ class Api::V1::CharactersController < ApplicationController
   private
 
   def find_character
-    @character = Character.find_by(params[:id])
+    @character = Character.find(params[:id])
   end
 
   def character_params
