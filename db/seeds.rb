@@ -19,11 +19,13 @@ end
 
 8.times do |n|
   title = Faker::Book.title
+  id = (856000 + (rand(90..100) * rand(499..999))).to_s
   author = Faker::Book.author
   category = ['Action', 'Biography', 'History', 'Horror', 'Kids', 'Learning', 'Sci-Fi', 'Drama'].sample
   pages = rand(100..1000).to_s
   progress = rand(pages.to_i).to_s
   Book.create!(
+              id: id,
               title: title,
               author: author,
               category: category,
