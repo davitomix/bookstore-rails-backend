@@ -7,8 +7,7 @@
 
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
-      origins '#{ENV['API_URL']}' 
-    # origins 'https://frosty-engelbart-d94f71.netlify.app/'
+    origins 'https://frosty-engelbart-d94f71.netlify.app/'
 
       headers: :any,
       methods: [:get, :post, :put, :patch, :delete, :options, :head]
