@@ -13,5 +13,21 @@
   Character.create!(
               name: name,
               catchphrase: catchphrase,
-              secret_key: secret_key)
+              secret_key: secret_key
+  )
+end
+
+8.times do |n|
+  title = Faker::Book.title
+  author = Faker::Book.author
+  category = ['Action', 'Biography', 'History', 'Horror', 'Kids', 'Learning', 'Sci-Fi', 'Drama'].sample
+  pages = rand(100..1000).to_s
+  progress = rand(pages.to_i).to_s
+  Book.create!(
+              title: title,
+              author: author,
+              category: category,
+              pages: pages,
+              progress: progress,
+  )
 end
